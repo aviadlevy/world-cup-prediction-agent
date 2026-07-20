@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f .claude/skills/mondial/cronjobs.json ] && printf '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Mondial project: session-only cron jobs (daily bet-revision check + reminders) die with each session. Compare CronList against .claude/skills/mondial/cronjobs.json and offer to restore any missing job via CronCreate with the stored cron/recurring/prompt. Skip one-shots whose date passed; recurring jobs expire 7 days after their createdAt.\"}}\\n' || true",
+            "statusMessage": "Checking mondial cron jobs"
+          }
+        ]
+      }
+    ]
+  }
+}
